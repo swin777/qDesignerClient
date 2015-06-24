@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <META http-equiv=”Expires” content=”-1″>
+	<META http-equiv=”Pragma” content=”no-cache”>
+	<META http-equiv=”Cache-Control” content=”No-Cache”>
+    <title>Hatio-Dynagram Designer</title>
+
+    <link rel="stylesheet" type="text/css" href="/dynagram/resources/css/ext-all.css"/>
+	<link rel="stylesheet" type="text/css" href="/dynagram/resources/css/application.css"/>
+	
+	<script>
+      var ashDrawPath = "/dynagram/ashDraw/";
+    </script>
+    
+	
+    <script src="/dynagram/ext-all.js"></script>
+    
+	<script src="/dynagram/designer/app/util/Base64.js"></script>
+	<script src="/dynagram/ashDraw/lib/LAB.min.js"></script>
+	<!--<script src="/dynagram/ashDraw/src/ashDraw.js"></script>-->
+	
+	<script src="/dynagram/ashDraw/lib/raphael.js"></script>
+	<script src="/dynagram/ashDraw/lib/raphael-svg-filter.js"></script>
+	<script src="/dynagram/ashDraw/lib/jquery-1.11.3.min.js"></script>
+	<script src="/dynagram/ashDraw/lib/jquery-ui.min.js"></script>
+	<script src="/dynagram/ashDraw/lib/rgbcolor.js"></script>
+	<script src="/dynagram/ashDraw/lib/canvg.js"></script>
+	<script src="/dynagram/ashDraw/lib/json2.js"></script>
+	<script src="/dynagram/ashDraw/lib/Class.js"></script>
+	<script src="/dynagram/dojo.js"></script>
+	<script type="text/javascript">
+		dojo.ready(function(){
+			$LAB.script("/dynagram/ashDraw/src/ashDraw.js");
+		});
+		
+		function ashDrawLoaded() {
+			$LAB.script(ashDrawPath + "src/hatio/HatioExtension.js");
+		}
+		
+		function hatioGraphtiLoaded() {	
+			$LAB.script("/dynagram/designer/app/application.js");
+		}
+    </script>
+	<!--<script src="/dynagram/designer/app/application.js"></script>-->
+  </head>
+  <body>
+  </body>
+</html>

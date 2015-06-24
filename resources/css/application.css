@@ -1,0 +1,41 @@
+// Global settings
+
+.canvas {
+	padding:0px;
+	margin:0px;
+	background : transparent url(../images/designer/background.png);
+}
+
+.navigation {
+	padding:0px;
+	margin:0px;
+/*	background : transparent url(../images/designer/background_drak.jpg);*/
+	text-align: center;
+}
+
+.palette_node_element {
+	color:black;
+	border:1px solid gray;
+	background-color: #f3f3f3;
+	padding:10px;
+	cursor:move;
+	width:80px;
+	margin: 10px 5px 10px 5px;
+	text-align:center;
+	align:center;
+	border-radius: 5px;
+}
+
+.svg_palette_node_element {
+	cursor:move;
+	margin: 10px 5px 10px 5px;
+/*	zoom: 0.5;*/
+}
+
+.shadow {
+	-moz-box-shadow: 3px 3px 4px #000;
+	-webkit-box-shadow: 3px 3px 4px #000;
+	box-shadow: 3px 3px 4px #000;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}

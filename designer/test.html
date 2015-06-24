@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hatio-Dynagram Designer(Test)</title>
+
+    <link rel="stylesheet" type="text/css" href="/dynagram/resources/css/ext-all-debug.css"/>
+	<link rel="stylesheet" type="text/css" href="/dynagram/resources/css/application.css"/>
+
+	<script>
+      var ashDrawPath = "/dynagram/ashDraw/";
+    </script>
+
+	<script src="/dynagram/lib/locale/locale.js"></script>
+    <script src="/dynagram/ext-all.js"></script>
+	<script src="/dynagram/designer/app/util/Base64.js"></script>
+	<script src="/dynagram/ashDraw/lib/LAB.min.js"></script>
+	<script src="/dynagram/ashDraw/src/ashDraw.js"></script>
+	
+	<script type="text/javascript">
+		initLocalization(this);
+		
+		function ashDrawLoaded() {
+			$LAB.script(ashDrawPath + "src/hatio/HatioExtension.js");
+		}
+		
+		function hatioGraphtiLoaded() {
+			Ext.Msg.alert("Success", "Grahpiti loaded!");
+			$LAB.script("/dynagram/lib/config/config.js").wait(function(){
+			});	
+		}
+		
+		window.onerror = function(msg, url, line) {
+			var errorStr = "Error: " + msg + "<br/>";
+			errorStr += "URL: " + url + "<br/>";
+			errorStr += "Line: " + line + "<br/>";
+			errorStr += "Click OK to continue.<br/>";
+			Ext.Msg.alert('Error', errorStr);
+		};
+		
+		var websocketUrl = 'http://127.0.0.1:5000';
+		var login = {
+			id : 'hatio',
+			name : 'Hatio',
+			email : 'hatio@hatiolab.com'
+		};
+    </script>
+	
+	<script src="/dynagram/lib/websocket/ux/websocket/Loader.js"></script>
+	<script src="/dynagram/lib/websocket/socket.io.js"></script>
+	<script src="/dynagram/resources/text/designer/en.js"></script>
+    <script src="/dynagram/designer/app/application.js"></script>
+
+  </head>
+  <body>
+  </body>
+</html>
