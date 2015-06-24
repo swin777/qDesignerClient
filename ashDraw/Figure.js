@@ -2,7 +2,7 @@ define(["dojo/_base/declare", "ashDraw/util/UUID"], function(declare){
 	return declare("ashDraw.Figure", null, {
 	    NAME: "ashDraw.Figure",
 	
-	    MIN_TIMER_INTERVAL: 50, // minimum timer interval in milliseconds
+	    MIN_TIMER_INTERVAL: 50,
 	
 	    constructor: function(width, height) {
 	        this.name = "ashDraw.Figure";
@@ -19,8 +19,8 @@ define(["dojo/_base/declare", "ashDraw/util/UUID"], function(declare){
 	        this.visible = true;
 	
 	        this.canSnapToHelper = true;
-	        this.snapToGridAnchor = new ashDraw.geo.Point(0, 0); // hot spot for snap to grid  
-	        this.editPolicy = new ashDraw.util.ArrayList(); // List<ashDraw.layout.constraint.EditPolicy)
+	        this.snapToGridAnchor = new ashDraw.geo.Point(0, 0);  
+	        this.editPolicy = new ashDraw.util.ArrayList(); 
 
 	        this.timerId = -1;
 	        this.timerInterval = 0;

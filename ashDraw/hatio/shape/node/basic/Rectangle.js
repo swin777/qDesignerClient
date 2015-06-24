@@ -19,24 +19,6 @@ dojo.declare("hatio.shape.node.basic.Rectangle", ashDraw.shape.basic.Rectangle, 
         this.createPort("hybrid",this.outputLocator);
         this.createPort("hybrid",this.outputLocator);
     },
-
-//    constructor: function() {
-//    	this.init();
-//    },
-//    
-//    init : function(){     
-//    	this.inherited(arguments);
-//        this.setDimension(50, 50);
-//        this.setBackgroundColor(this.DEFAULT_COLOR);
-//        this.setColor(this.DEFAULT_COLOR.darker());
-//
-//		this.inputLocator = new hatio.MyInputPortLocator();
-//        this.outputLocator = new hatio.MyOutputPortLocator();
-//        this.createPort("hybrid",this.inputLocator);
-//        this.createPort("hybrid",this.inputLocator);
-//        this.createPort("hybrid",this.outputLocator);
-//        this.createPort("hybrid",this.outputLocator);
-//    },
     
     getPersistentAttributes : function(){
         var memento = this.inherited(arguments);

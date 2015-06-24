@@ -32,7 +32,6 @@ define(["dojo/_base/declare", "ashDraw/command/Command"], function(declare){
 	    },
 
 	    canExecute:function(){
-	      // return false if we doesn't modify the model => NOP Command
 	      return this.newX!=this.oldX || this.newY!=this.oldY;
 	    },
 	    

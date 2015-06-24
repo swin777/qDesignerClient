@@ -43,13 +43,11 @@ dojo.declare("hatio.shape.node.basic.CustomImgFigure", ashDraw.shape.node.Node, 
         this.inherited(arguments, [attributes]);
     },
 
-    createShapeElement : function()
-    {
+    createShapeElement : function(){
        return this.canvas.paper.image(this.path, this.getX(), this.getY(), this.getWidth(), this.getHeight());
     },
 
-    getPersistentAttributes : function()
-    {
+    getPersistentAttributes : function(){
         var memento = {
             type  : this.NAME,
             id    : this.id,
@@ -64,15 +62,12 @@ dojo.declare("hatio.shape.node.basic.CustomImgFigure", ashDraw.shape.node.Node, 
         return memento;
     },
     
-    setPersistentAttributes : function(memento)
-    {
+    setPersistentAttributes : function(memento){
         this.id    = memento.id;
         this.x     = memento.x;
         this.y     = memento.y;
 		this.path  = memento.path;
         
-        // width and height are optional parameter for the JSON stuff.
-        // We use the defaults if the attributes not present
         if(typeof memento.width !== "undefined") {
             this.width = memento.width;
         }

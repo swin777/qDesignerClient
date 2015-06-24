@@ -27,7 +27,6 @@ define(["dojo/_base/declare", "ashDraw/command/Command"], function(declare){
 	    },
 
 	    canExecute:function(){
-	      // return false if we doesn't modify the model => NOP Command
 	      return this.newWidth!=this.oldWidth || this.newHeight!=this.oldHeight;
 	    },
 	    

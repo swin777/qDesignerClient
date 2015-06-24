@@ -73,19 +73,6 @@ function LABLoad(){
 	.script(ashDrawPath+"geo/Point.js")
 	.script(ashDrawPath+"geo/Rectangle.js")
 
-	//.script(ashDrawPath+"command/CommandType.js")
-	//.script(ashDrawPath+"command/Command.js")
-	//.script(ashDrawPath+"command/CommandStack.js")
-	//.script(ashDrawPath+"command/CommandStackEvent.js")
-	//.script(ashDrawPath+"command/CommandStackEventListener.js")
-	//.script(ashDrawPath+"command/CommandMove.js")
-	//.script(ashDrawPath+"command/CommandResize.js")
-	//.script(ashDrawPath+"command/CommandConnect.js")
-	//.script(ashDrawPath+"command/CommandReconnect.js")
-	//.script(ashDrawPath+"command/CommandDelete.js")
-	//.script(ashDrawPath+"command/CommandAdd.js")
-	//.script(ashDrawPath+"command/CommandReLabel.js")
-
 	.script(ashDrawPath+"layout/connection/ConnectionRouter.js")
 	.script(ashDrawPath+"layout/connection/DirectRouter.js")
 	.script(ashDrawPath+"layout/connection/ManhattanConnectionRouter.js")
@@ -111,8 +98,6 @@ function LABLoad(){
 	.script(ashDrawPath+"policy/VerticalEditPolicy.js")
 
 	.script(ashDrawPath+"Canvas.js")
-	//.script(ashDrawPath+"Figure.js")
-	//.script(ashDrawPath+"shape/node/Node.js")
 	.script(ashDrawPath+"VectorFigure.js")
 	.script(ashDrawPath+"shape/basic/Rectangle.js")
 	.script(ashDrawPath+"SetFigure.js")
