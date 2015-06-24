@@ -549,9 +549,6 @@ dojo.declare("ashDraw.Figure", null, {
         if (this.parent === null) {
             return this.x;
         }
-        if(!this.parent){
-        	console.log(this)
-        }
         return this.x + this.parent.getAbsoluteX();
     },
 
