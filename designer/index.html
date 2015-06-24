@@ -31,12 +31,19 @@
 	<script src="/dynagram/ashDraw/lib/Class.js"></script>
 	<script src="/dynagram/dojo.js"></script>
 	<script type="text/javascript">
+		dojoConfig = {
+				baseUrl: "/dynagram/",
+				packages: [
+						{name: "ashDraw", location: "ashDraw" }
+						]
+		};
+		
 		dojo.ready(function(){
-			$LAB.script("/dynagram/ashDraw/src/ashDraw.js");
+			$LAB.script("/dynagram/ashDraw/ashDraw.js");
 		});
 		
 		function ashDrawLoaded() {
-			$LAB.script(ashDrawPath + "src/hatio/HatioExtension.js");
+			$LAB.script(ashDrawPath + "hatio/HatioExtension.js");
 		}
 		
 		function hatioGraphtiLoaded() {	
