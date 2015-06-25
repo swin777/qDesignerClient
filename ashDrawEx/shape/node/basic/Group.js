@@ -7,17 +7,15 @@ define(["dojo/_base/declare",
         "ashDraw/shape/basic/Label"], function(declare){
 	return declare("ashDrawEx.shape.node.basic.Group", ashDraw.shape.basic.Rectangle, {
 	    NAME : "ashDrawEx.shape.node.basic.Group",
-	    
 	    contain:true,
-	    
 	    DEFAULT_COLOR : new ashDraw.util.Color("#C2E0FF"),
-	    
 	    customChildren:[],
 	    gLabel:'Group',
 
 	    "-chains-": {
 	        constructor: "manual"
 	    },
+	    
 	    constructor: function() {
 	    	var me = this;
 			Designer.app.eventbus.on('unmarshalComplete', function(canvas) {

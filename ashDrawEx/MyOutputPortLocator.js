@@ -1,6 +1,5 @@
 define(["dojo/_base/declare", "ashDraw/layout/locator/Locator"], function(declare){
 	return declare("ashDrawEx.MyOutputPortLocator", ashDraw.layout.locator.Locator, {
-		
 		"-chains-": {
 	        constructor: "manual"
 	    },
