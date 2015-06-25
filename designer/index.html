@@ -32,9 +32,9 @@
 	<script type="text/javascript">
 		dojoConfig = {
 				baseUrl: 'http://' + window.location.hostname + ':' + window.location.port + '/dynagram/',
-				packages: [
-						{name: "ashDraw", location: "ashDraw" }
-						]
+				packages: [{name: "ashDraw", location: "ashDraw"},
+				           {name: "ashDrawEx", location: "ashDrawEx" }
+				]
 		};
 		
 		dojo.ready(function(){
@@ -42,7 +42,8 @@
 		});
 		
 		function ashDrawLoaded() {
-			$LAB.script(ashDrawPath + "hatio/HatioExtension.js");
+			//$LAB.script(ashDrawPath + "ashDrawEx/HatioExtension.js");
+			$LAB.script("/dynagram/designer/app/application.js");
 		}
 		
 		function hatioGraphtiLoaded() {	

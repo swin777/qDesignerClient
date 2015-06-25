@@ -1,5 +1,5 @@
 define(["dojo/_base/declare", "ashDraw/command/Command"], function(declare){
-	declare("ashDraw.command.CommandReLabel", ashDraw.command.Command, {
+	return declare("ashDraw.command.CommandReLabel", ashDraw.command.Command, {
 	    NAME : "ashDraw.command.CommandReLabel", 
 	  
 	    "-chains-": {
@@ -32,7 +32,7 @@ define(["dojo/_base/declare", "ashDraw/command/Command"], function(declare){
 	    
 	    
 	    undo:function(){
-	    	if(this.figure instanceof hatio.shape.node.basic.Group){
+	    	if(this.figure.contain){
 	    		var children = this.figure.getChildren();
 	    		if(children.getSize()>1){
 	        		children.get(1).setText(this.oldLabel);
@@ -44,7 +44,7 @@ define(["dojo/_base/declare", "ashDraw/command/Command"], function(declare){
 	    },
 	    
 	    redo:function(){
-	    	if(this.figure instanceof hatio.shape.node.basic.Group){
+	    	if(this.figure.contain){
 	    		var children = this.figure.getChildren();
 	    		if(children.getSize()>1){
 	        		children.get(1).setText(this.newLabel);

@@ -13,7 +13,7 @@ Ext.define('Designer.command.file.New', {
 		var canvas = Ext.create('Designer.view.Canvas', {title : 'New'});
 		content.add(canvas);
 		content.layout.setActiveItem(canvas);
-		canvas.createHatioCanvas();
+		canvas.createExCanvas();
 	}
 	
 });

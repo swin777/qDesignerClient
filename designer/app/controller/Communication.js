@@ -135,8 +135,8 @@ Ext.define('Designer.controller.Communication', {
 	repliedAcceptCooperation : function(ws, coopMsg) {
 		this.roomId = coopMsg.roomId;
 		this.diagramId = coopMsg.diagramId;
-		var hatioCanvas = this.getHatioCanvas(this.diagramId);
-		hatioCanvas.getCommandStack().addEventListener(this);
+		var exCanvas = this.getExCanvas(this.diagramId);
+		exCanvas.getCommandStack().addEventListener(this);
 		Ext.Msg.alert('Invitation accepted', 'User [' + coopMsg.userName + '] accepted [' + coopMsg.diagramTitle + '] cooperation!');
 	},
 	
@@ -196,55 +196,55 @@ Ext.define('Designer.controller.Communication', {
 	
 	onFigureAdded : function(ws, coopMsg) {
 		// TODO figure add시에는 figure의 id가 uuid로 생성되기 때문에 아이디 동기화가 되지 않는다. id를 박아서 넘겨도 새로 생성될 때는 id가 바뀌어 버린다. ...
-		var hatioCanvas = this.getHatioCanvas(coopMsg.diagramId);
-		hatioCanvas.setCurrentSelection(null);
-		hatioCanvas.mouseActClear();
-        hatioCanvas.portDragMode = false;
-		if(hatioCanvas) {
+		var exCanvas = this.getExCanvas(coopMsg.diagramId);
+		exCanvas.setCurrentSelection(null);
+		exCanvas.mouseActClear();
+		exCanvas.portDragMode = false;
+		if(exCanvas) {
 			var figureAttrs = coopMsg.event.attrs;
 			var figure;
-			if(figureAttrs.type=='hatio.shape.node.basic.CustomSvgFigure'){
-				figure = new hatio.shape.node.basic.CustomSvgFigure(figureAttrs.node_id);
+			if(figureAttrs.type=='ashDrawEx.shape.node.basic.CustomSvgFigure'){
+				figure = new ashDrawEx.shape.node.basic.CustomSvgFigure(figureAttrs.node_id);
 			}else{
 				figure = eval('new ' + figureAttrs.type + '();');
 			}
-			var command = new ashDraw.command.CommandAdd(hatioCanvas, figure, figureAttrs.x, figureAttrs.y);
+			var command = new ashDraw.command.CommandAdd(exCanvas, figure, figureAttrs.x, figureAttrs.y);
 			command.ignore = 'y';
-			hatioCanvas.getCommandStack().execute(command);
+			exCanvas.getCommandStack().execute(command);
 		}
 	},
 	
 	onFigureDeleted : function(ws, coopMsg) {
-		var hatioCanvas = this.getHatioCanvas(coopMsg.diagramId);
-		hatioCanvas.setCurrentSelection(null);
-		hatioCanvas.mouseActClear();
-        hatioCanvas.portDragMode = false;
-		if(hatioCanvas) {
+		var exCanvas = this.getExCanvas(coopMsg.diagramId);
+		exCanvas.setCurrentSelection(null);
+		exCanvas.mouseActClear();
+		exCanvas.portDragMode = false;
+		if(exCanvas) {
 			var figureAttrs = coopMsg.event.attrs;
 			var figure = null;
 			
 			if(figureAttrs.type == 'ashDraw.Connection') {
-				figure = hatioCanvas.getLine(figureAttrs.id);
+				figure = exCanvas.getLine(figureAttrs.id);
 			} else {
-				figure = hatioCanvas.getFigure(figureAttrs.id);
+				figure = exCanvas.getFigure(figureAttrs.id);
 			}
 			
 			if(figure) {
 				var command = new ashDraw.command.CommandDelete(figure);
 				command.ignore = 'y';
-				hatioCanvas.getCommandStack().execute(command);
+				exCanvas.getCommandStack().execute(command);
 			}
 		}
 	},
 	
 	onFigureMoved : function(ws, coopMsg) {
-		var hatioCanvas = this.getHatioCanvas(coopMsg.diagramId);
-		hatioCanvas.setCurrentSelection(null);
-		hatioCanvas.mouseActClear();
-        hatioCanvas.portDragMode = false;
-		if(hatioCanvas) {
+		var exCanvas = this.getExCanvas(coopMsg.diagramId);
+		exCanvas.setCurrentSelection(null);
+		exCanvas.mouseActClear();
+		exCanvas.portDragMode = false;
+		if(exCanvas) {
 			var figureAttrs = coopMsg.event.attrs;
-			var figure = hatioCanvas.getFigure(figureAttrs.id);
+			var figure = exCanvas.getFigure(figureAttrs.id);
 			
 			if(figure) {
 				figure.setPersistentAttributes(figureAttrs);
@@ -254,51 +254,51 @@ Ext.define('Designer.controller.Communication', {
 				/* TODO Use command
 				var command = new ashDraw.command.CommandMove(figure, figureAttrs.x, figureAttrs.y);
 				command.ignore = 'y';
-				hatioCanvas.getCommandStack().execute(command);*/
+				exCanvas.getCommandStack().execute(command);*/
 			}
 		} 
 	},
 	
 	onConnectionConnected : function(ws, coopMsg) {
-		var hatioCanvas = this.getHatioCanvas(coopMsg.diagramId);
-		hatioCanvas.setCurrentSelection(null);
-		hatioCanvas.mouseActClear();
-        hatioCanvas.portDragMode = false;
-		if(hatioCanvas) {
+		var exCanvas = this.getExCanvas(coopMsg.diagramId);
+		exCanvas.setCurrentSelection(null);
+		exCanvas.mouseActClear();
+		exCanvas.portDragMode = false;
+		if(exCanvas) {
 			// TODO when connection connected
 		}
 	},
 	
 	onConnectionReconnected : function(ws, coopMsg) {
-		var hatioCanvas = this.getHatioCanvas(coopMsg.diagramId);
-		hatioCanvas.setCurrentSelection(null);
-		hatioCanvas.mouseActClear();
-        hatioCanvas.portDragMode = false;
-		if(hatioCanvas) {
-			// TODO when connection other target connected
+		var exCanvas = this.getExCanvas(coopMsg.diagramId);
+		exCanvas.setCurrentSelection(null);
+		exCanvas.mouseActClear();
+		exCanvas.portDragMode = false;
+		if(exCanvas) {
+			// exCanvas when connection other target connected
 		}
 	},
 	
 	onFigureResized : function(ws, coopMsg) {
-		var hatioCanvas = this.getHatioCanvas(coopMsg.diagramId);
-		hatioCanvas.setCurrentSelection(null);
-		hatioCanvas.mouseActClear();
-        hatioCanvas.portDragMode = false;
-		if(hatioCanvas) {
+		var exCanvas = this.getExCanvas(coopMsg.diagramId);
+		exCanvas.setCurrentSelection(null);
+		exCanvas.mouseActClear();
+		exCanvas.portDragMode = false;
+		if(exCanvas) {
 			var figureAttrs = coopMsg.event.attrs;
-			var figure = hatioCanvas.getFigure(figureAttrs.id);
+			var figure = exCanvas.getFigure(figureAttrs.id);
 			
 			if(figure) {
 				var command = new ashDraw.command.CommandResize(figure, figureAttrs.x, figureAttrs.y);
 				command.setDimension(figureAttrs.width, figureAttrs.height);
 				command.ignore = 'y';
-				hatioCanvas.getCommandStack().execute(command);
+				exCanvas.getCommandStack().execute(command);
 			}
 		}
 	},
 	
-	getHatioCanvas : function(diagramId) {
+	getExCanvas : function(diagramId) {
 		var canvasTab = Designer.app.findCanvasTab(diagramId);
-		return canvasTab ? canvasTab.getHatioCanvas() : null;
+		return canvasTab ? canvasTab.getExCanvas() : null;
 	}
 });

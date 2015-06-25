@@ -21,10 +21,10 @@ Ext.define('Designer.view.Canvas', {
 		this.callParent(arguments);
 	},	
 	
-	createHatioCanvas : function(diagramContent) {
+	createExCanvas : function(diagramContent) {
 		// TODO 이 부분에서 플러그 인 구현 
 		var self = this;
-		this.canvas = new hatio.HatioCanvas(this.canvasId);
+		this.canvas = new ashDrawEx.ExCanvas(this.canvasId);
 		Designer.app.eventbus.fireEvent('addcanvas', this.canvas);
 		
 		if(diagramContent) {

@@ -30,7 +30,7 @@ Ext.define('Designer.view.notation.Basic', {
 		}, 	{
 			xtype : 'notation_node',
 			id : 'basic_rectangle',
-			nodeInfo : {id : 'basic_rectangle', name : 'Rectangle', cls_name : 'hatio.shape.node.basic.Rectangle', node_type : 'Node'}
+			nodeInfo : {id : 'basic_rectangle', name : 'Rectangle', cls_name : 'ashDrawEx.shape.node.basic.Rectangle', node_type : 'Node'}
 		} ]
 	}, {
 		xtype : 'container',
@@ -41,15 +41,15 @@ Ext.define('Designer.view.notation.Basic', {
 		items : [ {
 			xtype : 'notation_node',
 			id : 'basic_circle',
-			nodeInfo : {id : 'basic_circle', name : 'Circle', cls_name : 'hatio.shape.node.basic.Circle', node_type : 'Node'}
+			nodeInfo : {id : 'basic_circle', name : 'Circle', cls_name : 'ashDrawEx.shape.node.basic.Circle', node_type : 'Node'}
 		}, 	{
 			xtype : 'notation_node',
 			id : 'basic_oval',
-			nodeInfo : {id : 'basic_oval', name : 'Oval', cls_name : 'hatio.shape.node.basic.Oval', node_type : 'Node'}
+			nodeInfo : {id : 'basic_oval', name : 'Oval', cls_name : 'ashDrawEx.shape.node.basic.Oval', node_type : 'Node'}
 		}, 	{
 			xtype : 'notation_node',
 			id : 'basic_diamond',
-			nodeInfo : {id : 'basic_diamond', name : 'Diamond', cls_name : 'hatio.shape.node.basic.Diamond', node_type : 'Node'}
+			nodeInfo : {id : 'basic_diamond', name : 'Diamond', cls_name : 'ashDrawEx.shape.node.basic.Diamond', node_type : 'Node'}
 		} ]
 	}, {
 		xtype : 'container',
@@ -60,15 +60,15 @@ Ext.define('Designer.view.notation.Basic', {
 		items : [ {
 			xtype : 'notation_node',
 			id : 'basic_label',
-			nodeInfo : {id : 'basic_label', name : 'Label', cls_name : 'hatio.shape.node.basic.Label', node_type : 'Node'}
+			nodeInfo : {id : 'basic_label', name : 'Label', cls_name : 'ashDrawEx.shape.node.basic.Label', node_type : 'Node'}
 		}, 	{
 			xtype : 'notation_node',
 			id : 'basic_image',
-			nodeInfo : {id : 'basic_image', name : 'Image', cls_name : 'hatio.shape.node.basic.Image', node_type : 'Node'}
+			nodeInfo : {id : 'basic_image', name : 'Image', cls_name : 'ashDrawEx.shape.node.basic.Image', node_type : 'Node'}
  		}, 	{
 			xtype : 'notation_node',
 			id : 'basic_group',
-			nodeInfo : {id : 'basic_group', name : 'Group', cls_name : 'hatio.shape.node.basic.Group', node_type : 'Node'}
+			nodeInfo : {id : 'basic_group', name : 'Group', cls_name : 'ashDrawEx.shape.node.basic.Group', node_type : 'Node'}
  		}  ]
 	} ]
 });

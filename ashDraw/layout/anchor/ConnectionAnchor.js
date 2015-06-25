@@ -1,30 +1,32 @@
-dojo.declare("ashDraw.layout.anchor.ConnectionAnchor", null, {
-    NAME: "ashDraw.layout.anchor.ConnectionAnchor",
+define(["dojo/_base/declare"], function(declare){
+	return declare("ashDraw.layout.anchor.ConnectionAnchor", null, {
+	    NAME: "ashDraw.layout.anchor.ConnectionAnchor",
 
-    constructor: function(owner) {
-        this.owner = owner;
-    },
+	    constructor: function(owner) {
+	        this.owner = owner;
+	    },
 
-    getLocation: function(reference) {
-        return this.getReferencePoint();
-    },
+	    getLocation: function(reference) {
+	        return this.getReferencePoint();
+	    },
 
-    getOwner: function() {
-        return this.owner;
-    },
+	    getOwner: function() {
+	        return this.owner;
+	    },
 
-    setOwner: function(owner) {
-        if (typeof owner === "undefined") {
-            throw "Missing parameter for 'owner' in ConnectionAnchor.setOwner";
-        }
-        this.owner = owner;
-    },
+	    setOwner: function(owner) {
+	        if (typeof owner === "undefined") {
+	            throw "Missing parameter for 'owner' in ConnectionAnchor.setOwner";
+	        }
+	        this.owner = owner;
+	    },
 
-    getBox: function() {
-        return this.getOwner().getAbsoluteBounds();
-    },
+	    getBox: function() {
+	        return this.getOwner().getAbsoluteBounds();
+	    },
 
-    getReferencePoint: function() {
-        return this.getOwner().getAbsolutePosition();
-    }
+	    getReferencePoint: function() {
+	        return this.getOwner().getAbsolutePosition();
+	    }
+	});
 });

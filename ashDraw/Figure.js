@@ -1,8 +1,20 @@
-define(["dojo/_base/declare", "ashDraw/util/UUID"], function(declare){
+define(["dojo/_base/declare", 
+        "ashDraw/util/UUID", 
+        "ashDraw/util/ArrayList",
+        "ashDraw/geo/Point",
+        "ashDraw/geo/Rectangle",
+        "ashDraw/policy/EditPolicy",
+        "ashDraw/command/CommandType",
+        "ashDraw/command/CommandMove",
+        "ashDraw/command/CommandDelete",
+        "ashDraw/command/CommandResize",
+        "ashDraw/layout/locator/BottomLocator"], function(declare){
 	return declare("ashDraw.Figure", null, {
 	    NAME: "ashDraw.Figure",
 	
 	    MIN_TIMER_INTERVAL: 50,
+	    
+	    contain:false,
 	
 	    constructor: function(width, height) {
 	        this.name = "ashDraw.Figure";
@@ -87,7 +99,9 @@ define(["dojo/_base/declare", "ashDraw/util/UUID"], function(declare){
 	            resizeHandle4.show(canvas, 0, 0);
 	            resizeHandle6.show(canvas, 0, 0);
 	            resizeHandle8.show(canvas, 0, 0);
-	            volatilePort.show(canvas, 0, 0, this)
+	            if(!this.contain){
+	            	volatilePort.show(canvas, 0, 0, this)
+	            }
 	        }
 	
 	        this.moveResizeHandles(canvas, resizeHandle1, resizeHandle2, resizeHandle3, resizeHandle4, resizeHandle5, resizeHandle6, resizeHandle7, resizeHandle8, volatilePort);

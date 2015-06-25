@@ -1,7 +1,10 @@
-ashDraw.geo.PositionConstants=function(){
-};
-
-ashDraw.geo.PositionConstants.NORTH =  1;
-ashDraw.geo.PositionConstants.SOUTH =  4;
-ashDraw.geo.PositionConstants.WEST  =  8;
-ashDraw.geo.PositionConstants.EAST  = 16;
+define(["dojo/_base/declare"], function(declare){
+	var PositionConstants = declare("ashDraw.geo.PositionConstants", null, {
+		
+	});
+	PositionConstants.NORTH =  1;
+	PositionConstants.SOUTH =  4;
+	PositionConstants.WEST  =  8;
+	PositionConstants.EAST  = 16;
+	return PositionConstants;
+});

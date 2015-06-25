@@ -30,7 +30,7 @@ Ext.define('Designer.view.notation.NotationNode', {
 	
 	createFigure : function() {
 		if("SVG" == this.nodeInfo.node_type) {
-			figure = new hatio.shape.node.basic.CustomSvgFigure(this.nodeInfo.id, this.nodeInfo.shape_width, this.nodeInfo.shape_height);
+			figure = new ashDrawEx.shape.node.basic.CustomSvgFigure(this.nodeInfo.id, this.nodeInfo.shape_width, this.nodeInfo.shape_height);
 		} else if("Node" == this.nodeInfo.node_type) {
 			figure = eval("new " + this.nodeInfo.cls_name + "();");
 		}

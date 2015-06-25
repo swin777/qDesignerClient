@@ -1,4 +1,5 @@
-define(["dojo/_base/declare", "ashDraw/Figure"], function(declare){
+define(["dojo/_base/declare", 
+        "ashDraw/Figure"], function(declare){
 	return declare("ashDraw.shape.node.Node", ashDraw.Figure, {
 	    NAME: "ashDraw.shape.node.Node",
 	    

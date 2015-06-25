@@ -45,7 +45,7 @@ Ext.define('Designer.command.file.Download', {
 				});
 				content.add(canvas);
 				content.layout.setActiveItem(canvas);
-				canvas.createHatioCanvas(diagramContent);
+				canvas.createExCanvas(diagramContent);
 				
 				if(canvasStackListener) {
 					canvas.getHatioCanvas().getCommandStack().addEventListener(canvasStackListener);

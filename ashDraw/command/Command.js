@@ -34,14 +34,14 @@ define(["dojo/_base/declare"], function(declare){
 	        for(var i=0; i<arr.length; i++){
 	     	   if(arr[i] && this.figure.id!=arr[i].id){
 	     		   var fi = arr[i];
-	     		   if(fi instanceof hatio.shape.node.basic.Group){
+	     		   if(fi && fi.contain){
 	     			   grpArr.push(fi);
 	     		   }else{
 	     			   genArr.push(fi);
 	     		   }
 	     	   }
 	        }
-	        if(this.figure instanceof hatio.shape.node.basic.Group){
+	        if(this.figure && this.figure.contain){
 	     	   this.figure.shape.toBack();
 	     	   for(var i=0; i<genArr.length; i++){
 	     		   this.figure.containTest(genArr[i]);
@@ -57,7 +57,7 @@ define(["dojo/_base/declare"], function(declare){
 	    
 	    groupAdminByRemove:function(){
 	    	try{
-	    		if(this.figure instanceof hatio.shape.node.basic.Group){
+	    		if(this.figure && this.figure.contain){
 	            	var arr = this.figure.getCanvas().getFigures().data;
 	            	for(var i=0; i<arr.length; i++){
 	            		if(arr[i].gId == this.id){
@@ -85,17 +85,17 @@ define(["dojo/_base/declare"], function(declare){
 	    
 	    groupAdminByMove:function(){
 	    	var arr = this.figure.getCanvas().getFigures().data;
-	    	if(this.figure instanceof hatio.shape.node.basic.Group){
+	    	if(this.figure && this.figure.contain){
 	    		for(var i=0; i<arr.length; i++){
 	    			var fi = arr[i];
-	    			if(fi && !(fi instanceof hatio.shape.node.basic.Group) && !(fi.gId)){
+	    			if(fi && !fi.contain && !(fi.gId)){
 	    				this.figure.containTest(fi);
 	    			}
 	    		}
 	    	}else{
 	    		for(var i=0; i<arr.length; i++){
 	    			var fi = arr[i];
-	    			if(fi instanceof hatio.shape.node.basic.Group){
+	    			if(fi && fi.contain){
 	    				if(fi.containTest(this.figure)){
 	    					return;
 	    	     		}
@@ -127,7 +127,7 @@ define(["dojo/_base/declare"], function(declare){
 	    	var arr = this.figure.getCanvas().getFigures().data;
 	    	for(var i=0; i<arr.length; i++){
 	    		var figure = arr[i];
-	    		if(figure instanceof hatio.shape.node.basic.Group && figure.id==gId){
+	    		if(figure && figure.contain && figure.id==gId){
 	    			return figure;
 	    		}
 	    	}
