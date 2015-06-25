@@ -5,22 +5,12 @@
     <META http-equiv=”Expires” content=”-1″>
 	<META http-equiv=”Pragma” content=”no-cache”>
 	<META http-equiv=”Cache-Control” content=”No-Cache”>
-    <title>Hatio-Dynagram Designer</title>
-
+    <title>AshDynagram Designer</title>
     <link rel="stylesheet" type="text/css" href="/dynagram/resources/css/ext-all.css"/>
 	<link rel="stylesheet" type="text/css" href="/dynagram/resources/css/application.css"/>
-	
-	<script>
-      var ashDrawPath = "/dynagram/ashDraw/";
-    </script>
-    
-	
     <script src="/dynagram/ext-all.js"></script>
-    
 	<script src="/dynagram/designer/app/util/Base64.js"></script>
 	<script src="/dynagram/ashDraw/lib/LAB.min.js"></script>
-	<!--<script src="/dynagram/ashDraw/src/ashDraw.js"></script>-->
-	
 	<script src="/dynagram/ashDraw/lib/raphael.js"></script>
 	<script src="/dynagram/ashDraw/lib/raphael-svg-filter.js"></script>
 	<script src="/dynagram/ashDraw/lib/jquery-1.11.3.min.js"></script>
@@ -33,7 +23,7 @@
 		dojoConfig = {
 				baseUrl: 'http://' + window.location.hostname + ':' + window.location.port + '/dynagram/',
 				packages: [{name: "ashDraw", location: "ashDraw"},
-				           {name: "ashDrawEx", location: "ashDrawEx" }
+				           {name: "ashDrawEx", location: "ashDrawEx"}
 				]
 		};
 		
@@ -42,15 +32,9 @@
 		});
 		
 		function ashDrawLoaded() {
-			//$LAB.script(ashDrawPath + "ashDrawEx/HatioExtension.js");
-			$LAB.script("/dynagram/designer/app/application.js");
-		}
-		
-		function hatioGraphtiLoaded() {	
 			$LAB.script("/dynagram/designer/app/application.js");
 		}
     </script>
-	<!--<script src="/dynagram/designer/app/application.js"></script>-->
   </head>
   <body>
   </body>

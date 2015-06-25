@@ -1,6 +1,4 @@
-var ashDraw = 
-{
-    
+var ashDraw = { 
     isTouchDevice : (
             //Detect iPhone
             (navigator.platform.indexOf("iPhone") != -1) ||
@@ -8,8 +6,7 @@ var ashDraw =
             (navigator.platform.indexOf("iPod") != -1)||
             //Detect iPad
             (navigator.platform.indexOf("iPad") != -1)
-        )
-    
+        )   
 };
 
 require(dojoConfig, [
@@ -31,14 +28,6 @@ require(dojoConfig, [
 						"ashDrawEx/VolatilePort",
                      ], ashDrawLoaded()
 );
-
-var _errorStack_=[];
-function pushErrorStack(/*:Exception*/ e, /*:String*/ functionName)
-{
-  _errorStack_.push(functionName+"\n");
-  /*re*/throw e;
-}
-
 
 Math.sign = function()
 {
